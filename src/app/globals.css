@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fcf9f8;
+    --surface: #ffffff;
+    --surface-soft: #f6f3f2;
+    --surface-container: #f0eded;
+    --on-background: #1b1c1c;
+    --on-surface: #1b1c1c;
+    --on-surface-variant: #414754;
+    --outline: #727785;
+    --outline-variant: #e5e2e1;
+    
+    --primary: #0071eb;
+    --primary-hover: #0059bc;
+    --on-primary: #ffffff;
+    
+    --secondary: #ff5a5f;
+    --secondary-hover: #e0484d;
+    --on-secondary: #ffffff;
+    
+    --tertiary: #008566;
+    --trust-teal: #ebfafa;
+    --rating-gold: #ffb400;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--on-background);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Card & Elevation Utilities */
+.shadow-airy {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-airy-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shadow-airy-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
